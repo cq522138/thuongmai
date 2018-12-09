@@ -11,6 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+//frontend site................................................
+route::get('/','HomeController@index');
+
+
+
+
+
+
+
+
+
+
+//backend site...............................................
+route::get('logout','SuperAdminController@logout');
+route::get('/admin','AdminController@index');
+route::get('/dashboard','AdminController@show_dashboard')->name('dashboard');
+route::post('/admin-dashboard','AdminController@dashboard');
+
+
+
+
+//category related route........................................
+route::get('/add-category','CategoryController@index');
+route::get('/all-category','CategoryController@all_category');
+route::post('/save-category','CategoryController@save_category')->name('save');
